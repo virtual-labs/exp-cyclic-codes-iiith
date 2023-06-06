@@ -112,3 +112,22 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+/* Table is added here in main itself*/
+table {
+    width: 100%;
+}
+
+td,
+th {
+    border: 2px solid gray;
+    text-align: left;
+    padding-top: 4px;
+}
+
+/* tr:nth-child(1) {
+    background-color: #e0c780;
+} */
+tr:nth-child(even) {
+    background-color:#dddddd;
+}
