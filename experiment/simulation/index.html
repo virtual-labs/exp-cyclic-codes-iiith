@@ -57,11 +57,12 @@
 
                             <b>Quick theory overview:</b>
                             <li>
-                                Encoding for \( (n, n-1) \) SPC code: The codeword corresponding to the message \(
-                                \left[ m_1,
-                                m_2, \dots, m_{n-1} \right ] \in \mathbb{F}_{2}^{n-1}\) will be \( \left[ m_1,
-                                m_2, \dots, m_{n-1}, p \right ] \in \mathbb{F}_{2}^{n} \), where \(p = m_1 + m_2 + \dots
-                                + m_{n-1}\).
+                                For an (n, k) cyclic code with the generator matrix <b>g(x)</b>, the code polynomial is
+                                the
+                                product of the message polynomial <b>m(x)</b> and <b>g(x)</b>.
+                            </li>
+                            <li>
+                                The coefficients of the code polynomial give the codeword.
                             </li>
                         </ul>
 
@@ -80,7 +81,8 @@
                             </li>
 
                             <li>
-                                Encode the message using a \( (3, 2) \) Single Parity Check Code and click on
+                                Encode the message using the (7, 4) Cyclic Code with the generator polynomial
+                                <b>g(x)=1+x+x<sup>3</sup></b> and click on
                                 <b>Submit</b>.
                             </li>
 
@@ -92,7 +94,6 @@
                                 If the answer is correct, click on <b>Reset</b> to try these steps again with a
                                 different binary message.
                             </li>
-
 
                         </ul>
                     </div>
@@ -106,7 +107,7 @@
         <div class="column is-11-desktop is-12-tablet is-12-mobile">
             <div class="v-datalist-container components-list">
                 <p>
-                    Encode a message of your choice using the (7, 4) cyclic code with the generator matrix
+                    Encode a message of your choice using the (7, 4) cyclic code with the generator polynomial
                     <b>g(x)=1+x+x<sup>3</sup></b>.
                     <br>
                 </p>
