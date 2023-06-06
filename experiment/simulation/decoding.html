@@ -57,7 +57,7 @@
 
                             <b>Quick theory overview:</b>
                             <li>
-                                Encoding
+                                Complete the Demo and read the theory before completing this simulation.
                             </li>
                         </ul>
 
@@ -68,8 +68,37 @@
                             <b>Procedure:</b>
 
                             <li>
-                                First enter a binary message and click on <b>Submit</b>.
+                                Initially, the shift register contents are 0 0 1. This is obtained from the Syndrome
+                                Computation circuit. The contents can be seen in the Simulation area as well as in the
+                                table in <b>Observations</b>.
                             </li>
+
+                            <li>
+                                Enter the next state values in all the fields provided and click on <b>Submit</b>.
+                            </li>
+
+                            <li>
+                                The correctness of the entered answer is displayed in <b>Observations</b>.
+                            </li>
+
+                            <li>
+                                If the entered answer is correct, the contents of the shift registers will be updated
+                                in the Simulation area. This can also be seen in the table in <b>Observations</b>. The
+                                contents of the buffer register will also get updated in the Simulation area.
+                            </li>
+
+                            <li>
+                                Repeat this procedure.
+                            </li>
+
+                            <li>
+                                After seven shifts, the buffer register contains the decoded codeword.
+                            </li>
+
+                            <li>
+                                <b>Reset</b> - Resets the simulation.
+                            </li>
+
 
                         </ul>
                     </div>
@@ -92,6 +121,7 @@
         style="margin-top:-1.5%">
         <div class="column is-8-desktop is-12-tablet is-12-mobile">
             <div class="box-question">
+                <p id="stage" style="font-size: 2em; font-weight: bold;">Initial stage</p>
                 <div class="image-container">
                     <img id="image" src="./images/cyclic-decoding.png">
 
@@ -168,7 +198,57 @@
             <div class="v-datalist-container components-list">
                 <div class="v-datalist-title">Observations</div>
                 <div id="observations">
+                    <span id="correctMessage"></span>
 
+                    <table style="margin-top: 3%;">
+                        <tr>
+                            <th width="120px">Shift</th>
+                            <th width="240px">Register
+                                Contents
+                            </th>
+
+                        </tr>
+                        <tr height="30px">
+                            <td>-</td>
+                            <td>0 0 1</td>
+
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t11"> </span> </td>
+                            <td> <span id="t12"> </span> </td>
+
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t21"> </span> </td>
+                            <td> <span id="t22"> </span> </td>
+
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t31"> </span> </td>
+                            <td> <span id="t32"> </span> </td>
+
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t41"> </span> </td>
+                            <td> <span id="t42"> </span> </td>
+                        </tr>
+
+                        <tr height="37px">
+                            <td> <span id="t51"> </span> </td>
+                            <td> <span id="t52"> </span> </td>
+                        </tr>
+
+                        <tr height="37px">
+                            <td> <span id="t61"> </span> </td>
+                            <td> <span id="t62"> </span> </td>
+                        </tr>
+
+                        <tr height="37px">
+                            <td> <span id="t71"> </span> </td>
+                            <td> <span id="t72"> </span> </td>
+                        </tr>
+
+                    </table>
                 </div>
             </div>
         </div>

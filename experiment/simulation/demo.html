@@ -46,7 +46,8 @@
 
                             <b>Quick theory overview:</b>
                             <li>
-                                Encoding
+                                The syndrome is formed by shifting the entire received vector into the syndrome
+                                register.
                             </li>
                         </ul>
 
@@ -57,11 +58,20 @@
                             <b>Procedure:</b>
 
                             <li>
-                                First enter a binary message and click on <b>Submit</b>.
+                                Initially, the syndrome register contents are 0 0 0. The right most bit of the received
+                                vector is given as the input to the circuit. This can be seen in the Simulation area as
+                                well as in the table in <b>Observations</b>.
                             </li>
 
+                            <li>
+                                Observe the contents of the syndrome register after every shift by clicking on
+                                <b>Next</b>.
+                            </li>
 
-
+                            <li>
+                                The syndrome computation will be completeded after seven shifts, resulting in the
+                                register content being the syndrome.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -76,7 +86,7 @@
                 <p>
                     <br>
                     Observe the computation of syndrome for the received vector
-                    <a style="color: blue;"><b>0010110</b></a> of the (7, 4) cyclic code with the generator matrix
+                    <a style="color: blue;"><b>0010110</b></a> of the (7, 4) cyclic code with the generator polynomial
                     <b>g(x)=1+x+x<sup>3</sup></b>.
                     <br>
                     <br>
@@ -88,7 +98,7 @@
     <div class="columns is-centered is-flex-direction-row is-flex-wrap-wrap is-align-content-start"
         style="margin-top:-1.5%">
         <div class="column is-8-desktop is-12-tablet is-12-mobile">
-            <div class="box-question">
+            <div class="box-question" id="box-question" style="padding: 5%;">
 
 
 
@@ -142,7 +152,66 @@
             <div class="v-datalist-container components-list">
                 <div class="v-datalist-title">Observations</div>
                 <div id="observations">
-                    Current State = <b>0 0 0</b> <br>Input = <b>0</b>
+
+                    <span id="finishMessage"> </span>
+
+                    <table style="margin-top: 3%;">
+                        <tr>
+                            <th width="55px">Shift</th>
+                            <th width="55px">Input</th>
+                            <th width="200px">Register
+                                Contents
+                            </th>
+
+                        </tr>
+                        <tr height="30px">
+                            <td>-</td>
+                            <td>0</td>
+                            <td>0 0 0</td>
+
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t11"> </span> </td>
+                            <td> <span id="t12"> </span> </td>
+                            <td> <span id="t13"> </span> </td>
+
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t21"> </span> </td>
+                            <td> <span id="t22"> </span> </td>
+                            <td> <span id="t23"> </span> </td>
+
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t31"> </span> </td>
+                            <td> <span id="t32"> </span> </td>
+                            <td> <span id="t33"> </span> </td>
+
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t41"> </span> </td>
+                            <td> <span id="t42"> </span> </td>
+                            <td> <span id="t43"> </span> </td>
+
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t51"> </span> </td>
+                            <td> <span id="t52"> </span> </td>
+                            <td> <span id="t53"> </span> </td>
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t61"> </span> </td>
+                            <td> <span id="t62"> </span> </td>
+                            <td> <span id="t63"> </span> </td>
+                        </tr>
+                        <tr height="37px">
+                            <td> <span id="t71"> </span> </td>
+                            <td> <span id="t72"> </span> </td>
+                            <td> <span id="t73"> </span> </td>
+                        </tr>
+                    </table>
+
+
                 </div>
             </div>
         </div>
