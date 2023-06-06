@@ -12,6 +12,7 @@ function generateMessage() {
 
     document.getElementById("message-bits").innerHTML = "<b>" + reverseMessage[3] + reverseMessage[2] + reverseMessage[1] + reverseMessage[0] + "</b>";
     document.getElementById("inp-message-bit").innerHTML = reverseMessage[0];
+    document.getElementById("table-message-bit").innerHTML = reverseMessage[0];
 
     return false;
 }
@@ -30,7 +31,7 @@ function checkAnswer() {
     const input2 = document.getElementById("p2").value;
     const input3 = document.getElementById("p3").value;
     const nextBit = document.getElementById("inp-message-bit");
-    const obs = document.getElementById("observations");
+    const obs = document.getElementById("correctMessage");
 
     if (input1.length == 0 || input2.length == 0 || input3.length == 0) {
         obs.style.color = "black";
@@ -56,6 +57,8 @@ function checkAnswer() {
 
             document.getElementById("form1").reset();
 
+            let k = i + 1;
+
             if (i == 3) {
                 obs.innerHTML = "<b>Correct Answer!!!</b>" + "<br> You have successfully completed the encoding. Now enter the codeword.";
                 obs.style.color = "green";
@@ -66,12 +69,21 @@ function checkAnswer() {
 
             else {
                 let j = i + 2;
-                nextBit.innerHTML = reverseMessage[i + 1];
-                obs.innerHTML = "<b>Correct Answer!!!</b>" + "<br> Now fill the values of shift " + j;
+                nextBit.innerHTML = reverseMessage[k];
+                var nextBitId = "t" + k + 2;
+                document.getElementById(nextBitId).innerHTML = reverseMessage[k];
+                obs.innerHTML = "<b>Correct Answer!!!</b>" + "<br> Now fill the values of the next shift ";
                 obs.style.color = "green";
-
-
             }
+
+            var shiftId="t" + k  + 1;
+            var regContId="t" + k + 3;
+
+
+            document.getElementById("stage").innerHTML = "Shift" + "-" + k;
+            document.getElementById(shiftId).innerHTML = k;
+            document.getElementById(regContId).innerHTML = input1 + " " + input2 + " " + input3;
+
 
             if (i < 3) {
                 arr1 = arrnext;
@@ -119,7 +131,7 @@ function verifyCodeword() {
     const c5 = document.getElementById("c5").value;
     const c6 = document.getElementById("c6").value;
     const c7 = document.getElementById("c7").value;
-    const obs = document.getElementById("observations");
+    const obs = document.getElementById("correctMessage");
 
     let arrnext = getNextArr();
 
@@ -177,15 +189,23 @@ function initial() {
 
     generateMessage();
 
+    document.getElementById("stage").innerHTML = "Initial Stage";
     document.getElementById("p1").style.display = "block";
     document.getElementById("p2").style.display = "block";
     document.getElementById("p3").style.display = "block";
 
-    document.getElementById("observations").innerHTML = "";
 
-    document.getElementById("shift-reg-1").innerHTML="0";
-    document.getElementById("shift-reg-2").innerHTML="0";
-    document.getElementById("shift-reg-3").innerHTML="0";
+    document.getElementById("shift-reg-1").innerHTML = "0";
+    document.getElementById("shift-reg-2").innerHTML = "0";
+    document.getElementById("shift-reg-3").innerHTML = "0";
+
+    for (var ii = 1; ii <= 4; ii++) {
+        for (var jj = 1; jj <= 3; jj++) {
+          var id = "t" + ii + jj;
+          document.getElementById(id).innerHTML = "";
+        }
+      }
+    document.getElementById("correctMessage").innerHTML = "";
 
 
 }
