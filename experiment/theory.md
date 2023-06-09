@@ -18,8 +18,8 @@ For a cyclic code, as the name suggests,  cyclic shift of any codeword is also a
 Before providing other properties of cyclic codes, let us consider a simple example for a cyclic code. Consider a linear block code of length $n=4$ and dimension $k=2$ 
 with the set of codewords given by $\{ [0000, 1010, 0101, 1111] \}$. Observe that any cyclic shift of a codeword is again a valid codeword and hence this linear block code is a cyclic code. Students are encouraged to revisit Experiment-3 and verify that Hamming codes indeed follow this property and are cyclic codes.
 
-For cyclic codes, it is convenient to represent its codewords using polynomials. The polynomial representation of vector $\mathbf{v} = [v_0 &ensp; v_1 &ensp; v_{n-1} ]$, denoted by $\mathbf{v}(X)$, is given by <br/>  
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\mathbf{v}(X) = [ v_0 + v_1X + v_2X^2 + ... + v_{n-1}X^{n-1}].$ &ensp;&ensp;&ensp;&ensp; (2)
+For cyclic codes, it is convenient to represent its codewords using polynomials. The polynomial representation of vector $\mathbf{v} = [v_0  v_1  v_{n-1} ]$, denoted by $\mathbf{v}(X)$, is given by <br/>  
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\mathbf{v}(X) = [ v_0 + v_1X + v_2X^2 + ... + v_{n-1}X^{n-1}]$. &ensp;&ensp;&ensp;&ensp; (2)
 
 Let $\mathbf{F}_2[X]$ denotes the set of polynomials with the coefficients chosen from $\mathbf{F}_2$. Thus the polynomial $\mathbf{v}(X)$ in $\mathbb{F}_2[X]$.
 For the given cyclic code $\mathcal{C}(n,k)$, there exists a polynomial $g(X)$ in $\mathbb{F}_2[X]$ such that any codeword $\mathbf{v}(X)$ in $\mathcal{C}(n,k)$ can be written as <br/>
