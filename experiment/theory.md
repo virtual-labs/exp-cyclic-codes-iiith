@@ -9,9 +9,9 @@ The theory associated with Experiment-8 is divided into two parts:
 
 Cyclic codes form an important subclass of linear block codes. In this section, we will introduce definition and basic properties of cyclic codes. <br/> A detailed discussion of the topics covered in these notes can be found in [1, Chapter 5]. In this Experiment, we will focus on _binary_ cyclic codes. In Experiment-7, we had introduced Reed-Solomon codes. Note that Reed-Solomon codes form a class of _non-binary_ cyclic codes. <br/> In Experiment-3, we studied Hamming codes, which are binary cyclic codes.   
 
-Let us first define the operation of cyclic shift of a vector. Consider a vector $\mathbf{v} = [v_0, &ensp;  v_1, &ensp; v_{n-1}]$. 
+Let us first define the operation of cyclic shift of a vector. Consider a vector $\mathbf{v} = [v_0,   v_1, v_{n-1}]$. 
 Then the vector $\mathbf{v}^{(i)}$ obtained by shifting $\mathbf{v}$ cyclically to the right $i$-times is given by <br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  $\mathbf{v}^{(i)} = [v_{n-i} &ensp; v_{n-i+1} &ensp; . . . &ensp; v_0 &ensp;  v_1 &ensp; . . .  v_{n-i-1}]$. &ensp; &ensp;  &ensp; &ensp; (1) <br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  $\mathbf{v}^{(i)} = [v_{n-i}  v_{n-i+1}  . . .  v_0   v_1  . . .  v_{n-i-1}]$. &ensp; &ensp;  &ensp; &ensp; (1) <br/>
 For a cyclic code, as the name suggests,  cyclic shift of any codeword is also a codeword. This property precisely defines a cyclic code. 
  
  **Definition&ensp;1** &ensp; _A linear block code_ $C(n,k)$ _is said to be a cyclic code if every cyclic shift of a codeword is also a codeword in the given code_ $C(n,k)$. <br/>
