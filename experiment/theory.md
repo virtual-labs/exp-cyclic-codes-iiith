@@ -11,19 +11,19 @@ Cyclic codes form an important subclass of linear block codes. In this section, 
 
 Let us first define the operation of cyclic shift of a vector. Consider a vector $\mathbf{v} = [v_0,   v_1, v_{n-1}]$. 
 Then the vector $\mathbf{v}^{(i)}$ obtained by shifting $\mathbf{v}$ cyclically to the right $i$-times is given by <br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  $\mathbf{v}^{(i)} = [v_{n-i}  v_{n-i+1}  . . .  v_0   v_1  . . .  v_{n-i-1}]$. &ensp; &ensp;  &ensp; &ensp; (1) <br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; $\mathbf{v}^{(i)} = [v_{n-i}  v_{n-i+1}  . . .  v_0   v_1  . . .  v_{n-i-1}]$. &ensp; &ensp;  &ensp; &ensp; (1) <br/>
 For a cyclic code, as the name suggests,  cyclic shift of any codeword is also a codeword. This property precisely defines a cyclic code. 
  
  **Definition&ensp;1** &ensp; _A linear block code_ $C(n,k)$ _is said to be a cyclic code if every cyclic shift of a codeword is also a codeword in the given code_ $C(n,k)$. <br/>
 Before providing other properties of cyclic codes, let us consider a simple example for a cyclic code. Consider a linear block code of length $n=4$ and dimension $k=2$ 
-with the set of codewords given by $\{ [0000, 1010, 0101, 1111] \}$. Observe that any cyclic shift of a codeword is again a valid codeword and hence this linear block code is a cyclic code. Students are encouraged to revisit Experiment-3 and verify that Hamming codes indeed follow this property and are cyclic codes.
+with the set of codewords given by $\{ 0000, 1010, 0101, 1111 \}$. Observe that any cyclic shift of a codeword is again a valid codeword and hence this linear block code is a cyclic code. Students are encouraged to revisit Experiment-3 and verify that Hamming codes indeed follow this property and are cyclic codes.
 
 For cyclic codes, it is convenient to represent its codewords using polynomials. The polynomial representation of vector $\mathbf{v} = [v_0  v_1  v_{n-1} ]$, denoted by $\mathbf{v}(X)$, is given by <br/>  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\mathbf{v}(X) = [ v_0 + v_1X + v_2X^2 + ... + v_{n-1}X^{n-1}]$. &ensp;&ensp;&ensp;&ensp; (2)
 
 Let $\mathbb{F}_2[X]$ denotes the set of polynomials with the coefficients chosen from $\mathbb{F}_2$. Thus the polynomial $\mathbf{v}(X)$ in $\mathbb{F}_2[X]$.
 For the given cyclic code $\mathcal{C}(n,k)$, there exists a polynomial $g(X)$ in $\mathbb{F}_2[X]$ such that any codeword $\mathbf{v}(X)$ in $\mathcal{C}(n,k)$ can be written as <br/>
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\mathbf{v}(X)$ = $\mathbf{u}(X)g(X)$, &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;(3)
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\mathbf{v}(X)$ = $\mathbf{u}(X)g(X)$, &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;(3)
 
 where $\mathbf{u}(X)$ is the polynomial corresponding to the message $\mathbf{u} \in \mathbb{F}_2^k$. For multiplying two polynomials in $\mathbb{F}_2[X]$, the individual additions and multiplications of the corresponding coefficients should be performed over $\mathbb{F}_2$ (details can be found in the theory of Experiment-1, Part-1).
 <br/> See Eq.(5) discussed below for an illustration of multiplication of two polynomials in $\mathbb{F}_2[X]$. Observe that the maximum degree of a codeword polynomial will be $n-1$ and similarly the maximum degree of a message polynomial can be $k-1$.
@@ -41,12 +41,15 @@ We now summarize some of the properties of the generating polynomial. Details ca
  <br/>
  Let us consider some examples of cyclic codes. 
 <br/>
+<!-- -->
 1. **Example-1:** Consider the cyclic code of length $n=4$ and dimension $k=2$  with the set of codewords given by $\{ 0000, 1010, 0101, 1111 \}$. Suppose $\mathbf{v}_1 = 0000$, $\mathbf{v}_2 = 1010$, $\mathbf{v}_3 = 0101$, $\mathbf{v}_4 = 1111$. 
 The polynomial representations of these codewords are given below
 <br/>
 ![alt text](./images/exp8-fig2.png)
 <br/>
-Observe that every codeword is a multiple of the polynomial $\tcr{1+X^2}$ and hence it is the generating polynomial of the code. Using property-5, can you write down a generating matrix of this code?
+
+Observe that every codeword is a multiple of the polynomial $\{1+X^2}$ and hence it is the generating polynomial of the code. Using property-5, can you write down a generating matrix of this code?
+
 
 
 
