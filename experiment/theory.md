@@ -11,7 +11,7 @@ Cyclic codes form an important subclass of linear block codes. In this section, 
 
 Let us first define the operation of cyclic shift of a vector. Consider a vector $\mathbf{v} = [v_0,   v_1, v_{n-1}]$. 
 Then the vector $\mathbf{v}^{(i)}$ obtained by shifting $\mathbf{v}$ cyclically to the right $i$-times is given by <br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; $\mathbf{v}^{(i)} = [v_{n-i}  v_{n-i+1}  . . .  v_0   v_1  . . .  v_{n-i-1}]$. &ensp; &ensp;  &ensp; &ensp;&ensp; &ensp;&ensp; &ensp;&ensp;&ensp;(1) <br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; $\mathbf{v}^{(i)} = [v_{n-i}  v_{n-i+1}  . . .  v_0   v_1  . . .  v_{n-i-1}]$. &ensp; &ensp;  &ensp; &ensp;&ensp; &ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;(1) <br/>
 For a cyclic code, as the name suggests,  cyclic shift of any codeword is also a codeword. This property precisely defines a cyclic code. 
  
  **Definition&ensp;1** &ensp; _A linear block code_ $C(n,k)$ _is said to be a cyclic code if every cyclic shift of a codeword is also a codeword in the given code_ $C(n,k)$. <br/>
@@ -34,9 +34,11 @@ We now summarize some of the properties of the generating polynomial. Details ca
  1. For the given cyclic code $\mathcal{C}(n,k)$, the generating polynomial $g(X)$ is the non-zero codeword of the minimum degree.  
  2. The generating polynomial of a cyclic code is unique.
  3. Degree of the generating polynomial is equal to $n-k$.
- 4. Suppose $g(X)$ = $g_0 + g_1X + ... + g_{n-k}X^{n-k}$. Then we have $g_0 = g_{n-k} = 1$.
+ 4. Suppose $g(X)$ $=$ $g_0 + g_1X + ... + g_{n-k}X^{n-k}$. Then we have $g_0 = g_{n-k} = 1$.
  5. A generator matrix $G \in \mathbb{F}_2^{k \times n}$ of the code $\mathcal{C}(n,k)$ can be written directly using its generating polynomial $g(X) = g_0 + g_1X + \ldots + g_{n-k}X^{n-k}$ as follows,
+ <br/>
  ![alt text](./images/exp8-fig1.png)
+ <br/>
  6. The generating polynomial $g(X)$ is a factor of the polynomial $X^n+1$.
  <br/>
  Let us consider some examples of cyclic codes. 
@@ -66,10 +68,35 @@ These are tabulated below. Students are encouraged to verify the calculations to
 ![alt text](./images/exp8-fig4.png)
 ## 2 &nbsp; &nbsp; Shift register based encoder and decoder
 <br/>
-For encoding a message $\mathbf{u}$ $in$ $\mathbf{F_2^k}$ using a cyclic code, one can consider a generator matrix $G$ of the given code and obtain the corresponding codeword as $\mathbf{v} = \mathbf{u}G$, since cyclic code is a linear block code. However, cyclic codes have rich algebraic structures and this allows to perform encoding operation much efficiently. Similarly, while one can perform decoding of cyclic codes via standard array and syndrome decoding (see Experiment-4), owing to these structural properties, decoding can be performed efficiently. In this experiment, we shall focus on shift register based encoder and decoder for cyclic codes. 
+For encoding a message $\mathbf{u}$ in $\mathbf{F_2^k}$ using a cyclic code, one can consider a generator matrix $G$ of the given code and obtain the corresponding codeword as $\mathbf{v} = \mathbf{u}G$, since cyclic code is a linear block code. However, cyclic codes have rich algebraic structures and this allows to perform encoding operation much efficiently. Similarly, while one can perform decoding of cyclic codes via standard array and syndrome decoding (see Experiment-4), owing to these structural properties, decoding can be performed efficiently. In this experiment, we shall focus on shift register based encoder and decoder for cyclic codes. 
 <br/>
-## 2.1 &nbsp; &nbsp; Shift register based encoder
+### 2.1 &nbsp; &nbsp; Shift register based encoder
 
-Let us first study shift register based encoder for a cyclic code of length $n$ and the generator polynomial $g(X) = 1+X+X^2+\ldots+g_{n-k-1}X^{n-k-1}+X^{n-k}$ (recall that $g_0=g_{n-k}=1$). Suppose we wish to encode the message polynomial $\mathbf{u}(X) = u_0+u_1X+u_2X^2+ ... +u_{k-1}X^{k-1}$. Let $\mathbf{b}(X)$ be the remainder obtained when the polynomial $X^{n-k}\mathbf{u}(X)$ is divided by $g(X)$. Then it can be shown that (for proof refer [1, Section 5.1]) the corresponding codeword $\mathbf{v}(X)$ will be given by \begin{align}
-\mathbf{v}(X) = \mathbf{b}(X) + X^{n-k}\mathbf{u}(X).
-\end{align}
+Let us first study shift register based encoder for a cyclic code of length $n$ and the generator polynomial $g(X) = 1+X+X^2+\ldots+g_{n-k-1}X^{n-k-1}+X^{n-k}$ (recall that $g_0=g_{n-k}=1$). Suppose we wish to encode the message polynomial $\mathbf{u}(X) = u_0+u_1X+u_2X^2+ ... +u_{k-1}X^{k-1}$. Let $\mathbf{b}(X)$ be the remainder obtained when the polynomial $X^{n-k}\mathbf{u}(X)$ is divided by $g(X)$. Then it can be shown that (for proof refer [1, Section 5.1]) the corresponding codeword $\mathbf{v}(X)$ will be given by 
+&ensp; &ensp;  &ensp; &ensp;&ensp; &ensp;&ensp; &ensp;&ensp;&ensp; $\mathbf{v}(X) = \mathbf{b}(X) + X^{n-k}\mathbf{u}(X).$ &ensp; &ensp;  &ensp; &ensp;&ensp; &ensp;(6)
+</br>
+We shall next see how Eq.(6) can be implemented using shift registers. The encoding circuit corresponding to this is shown in Figure~1. When the value of $g_i=1$, the corresponding connection will present, for $i = 2, 3, ... , n-k-1$. Similarly when $g_i=0$, the corresponding connection will not be there.  
+Observe that there are $n-k$ shift registers. The contents of the shift registers are denoted by $b_0, b_1, ..., b_{n-k-1}$. Note that when the operation of the circuit is completed, the values of $b_0, b_1, ... , b_{n-k-1}$ will provide the coefficients of the required remainder polynomial $\mathbf{b}(X)$. 
+<br/>
+![alt text](./images/exp8-fig5.png)
+<br/>
+Figure 1: An encoder for the cyclic code of length $n$ and the generator polynomial $g(X) = 1+X+X^2+ ... +g_{n-k-1}X^{n-k-1}+X^{n-k}$.
+<br/>
+The encoding steps are summarized below.
+1. The contents of all shift registers are initialized to zero.
+2. Turn on the gate.
+3. At $i$-th time instant, message bit $u_{k-i}$ is available at the input. Note that the message bit $u_{k-1}$ enters the system first, followed by $u_{k-2}$, and so on.
+4. First perform all the computations (at the outputs of all XOR gates) using the present values of the shift registers and the input message bit $u_{k-i}$. This will provide the values of the shift registers for the next time instant.
+5. Steps 3 and 4 should be performed for $i = 1, 2, ... , k$ time instances. 
+6. Turn off the gate after $k$ time instances, i.e., when the computations corresponding to all message bits are completed.
+7. The contents of the shift registers will now provide the coefficients of the remainder polynomial $\mathbf{b}(X)$.
+8. To obtain the final codeword, the switch is kept at the message bits for the initial $k$ time instances and on the parity bits for the remaining $n-k$ time instances. Thus the final codeword is will be
+&ensp; &ensp;&ensp; &ensp;&ensp; &ensp; $\mathbf{v} = \begin{bmatrix} b_0 & b_1 & b_2 & u_0 & u_1 & u_2 & u_3 \end{bmatrix}$ &ensp; &ensp;&ensp; &ensp;&ensp; &ensp; 
+<br/>
+**Encoder for Example-2:** Let us consider Example-2 to illustrate encoding steps. The encoder for Example-2 is shown in Figure-2. Suppose at some time instant, the contents of the shift register are $\begin{bmatrix} b_0 & b_1 & b_2 \end{bmatrix} = \begin{bmatrix} 0 & 1 & 1 \end{bmatrix}$ and the input message bit is $1$.
+Then at the next time instant, contents of the shift registers will be $\begin{bmatrix} b_0 & b_1 & b_2 \end{bmatrix} = \begin{bmatrix} 0 & 0 & 1 \end{bmatrix}$.
+![alt text](./images/exp8-fig6.png)
+<br/>
+Figure 2: An encoder for the cyclic code of length $n=3$ and the generator polynomial $g(X) = 1+X+X^3$.
+
+
