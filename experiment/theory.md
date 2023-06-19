@@ -9,9 +9,9 @@ The theory associated with Experiment-8 is divided into two parts:
 
 Cyclic codes form an important subclass of linear block codes. In this section, we will introduce definition and basic properties of cyclic codes. <br/> A detailed discussion of the topics covered in these notes can be found in [1, Chapter 5]. In this Experiment, we will focus on _binary_ cyclic codes. In Experiment-7, we had introduced Reed-Solomon codes. Note that Reed-Solomon codes form a class of _non-binary_ cyclic codes. <br/> In Experiment-3, we studied Hamming codes, which are binary cyclic codes.   
 
-Let us first define the operation of cyclic shift of a vector. Consider a vector $\mathbf{v} = [v_0,   v_1, v_{n-1}]$. 
+Let us first define the operation of cyclic shift of a vector. Consider a vector $\mathbf{v} = \begin{bmatrix} v_0 & v_1 & v_{n-1}\end{bmatrix}$ .
 Then the vector $\mathbf{v}^{(i)}$ obtained by shifting $\mathbf{v}$ cyclically to the right $i$-times is given by <br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; $\mathbf{v}^{(i)} = [v_{n-i}  v_{n-i+1}  . . .  v_0   v_1  . . .  v_{n-i-1}]$. &ensp; &ensp;  &ensp; &ensp;&ensp; &ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;(1) <br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; $\mathbf{v}^{(i)} = \begin{bmatrix} v_{n-i} & v_{n-i+1} & . . .  &v_0 & v_1 & . . . &v_{n-i-1}\end{bmatrix}$. &ensp; &ensp;  &ensp; &ensp;&ensp; &ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;(1) <br/>
 For a cyclic code, as the name suggests,  cyclic shift of any codeword is also a codeword. This property precisely defines a cyclic code. 
  
  **Definition&ensp;1** &ensp; _A linear block code_ $C(n,k)$ _is said to be a cyclic code if every cyclic shift of a codeword is also a codeword in the given code_ $C(n,k)$. <br/>
@@ -46,13 +46,12 @@ We now summarize some of the properties of the generating polynomial. Details ca
  Let us consider some examples of cyclic codes. 
 <br/>
 <a/>
-[//]: # 
 1. **Example-1:** Consider the cyclic code of length $n=4$ and dimension $k=2$  with the set of codewords given by $\{ 0000, 1010, 0101, 1111 \}$. Suppose 
 $\mathbf{v}_1 = 0000$, $\mathbf{v}_2 = 1010$, $\mathbf{v}_3 = 0101$, $\mathbf{v}_4 = 1111$. 
 
  &ensp;&ensp;&ensp; The polynomial representations of these codewords are given below
 <br/>
-![alt text](./images/exp8-fig2.png)
+&nbsp; &nbsp; ![alt text](./images/exp8-fig2.png)
 <br/>
 
  &ensp;&ensp;&ensp; Observe that every codeword is a multiple of the polynomial ${1+X^2}$ and hence it is the generating polynomial of the code. Using property-5, can you write down a generating matrix of this code?
@@ -72,7 +71,7 @@ These are tabulated below. Students are encouraged to verify the calculations to
 <br/>
 For encoding a message $\mathbf{u}$ in $\mathbf{F_2^k}$ using a cyclic code, one can consider a generator matrix $G$ of the given code and obtain the corresponding codeword as $\mathbf{v} = \mathbf{u}G$, since cyclic code is a linear block code. However, cyclic codes have rich algebraic structures and this allows to perform encoding operation much efficiently. Similarly, while one can perform decoding of cyclic codes via standard array and syndrome decoding (see Experiment-4), owing to these structural properties, decoding can be performed efficiently. In this experiment, we shall focus on shift register based encoder and decoder for cyclic codes. 
 <br/>
-### 2.1 &nbsp; &nbsp; Shift register based encoder
+**2.1 &nbsp; &nbsp; Shift register based encoder**
 
 Let us first study shift register based encoder for a cyclic code of length $n$ and the generator polynomial $g(X) = 1+X+X^2+\ldots+g_{n-k-1}X^{n-k-1}+X^{n-k}$ (recall that $g_0=g_{n-k}=1$). Suppose we wish to encode the message polynomial $\mathbf{u}(X) = u_0+u_1X+u_2X^2+ ... +u_{k-1}X^{k-1}$. Let $\mathbf{b}(X)$ be the remainder obtained when the polynomial $X^{n-k}\mathbf{u}(X)$ is divided by $g(X)$. Then it can be shown that (for proof refer [1, Section 5.1]) the corresponding codeword $\mathbf{v}(X)$ will be given by 
 <br/>
@@ -83,7 +82,7 @@ Observe that there are $n-k$ shift registers. The contents of the shift register
 <br/>
 ![alt text](./images/exp8-fig5.png)
 <br/>
-$Figure 1: An encoder for the cyclic code of length $n$ and the generator polynomial g(X) = 1+X+X^2+ ... +g_{n-k-1}X^{n-k-1}+X^{n-k}$.
+_Figure 1: An encoder for the cyclic code of length_ $n$ _and the generator polynomial_ g(X) = 1+X+X^2+ ... +g_{n-k-1}X^{n-k-1}+X^{n-k}$.
 <br/>
 The encoding steps are summarized below.
 1. The contents of all shift registers are initialized to zero.
@@ -100,6 +99,6 @@ The encoding steps are summarized below.
 Then at the next time instant, contents of the shift registers will be $\begin{bmatrix} b_0 & b_1 & b_2 \end{bmatrix} = \begin{bmatrix} 0 & 0 & 1 \end{bmatrix}$.
 ![alt text](./images/exp8-fig6.png)
 <br/>
-$Figure 2: An encoder for the cyclic code of length $n=3$ and the generator polynomial g(X) = 1+X+X^3$.
+_Figure 2: An encoder for the cyclic code of length_ $n=3$ _and the generator polynomial_ $g(X) = 1+X+X^3$.
 
 
