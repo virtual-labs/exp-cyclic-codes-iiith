@@ -11,7 +11,7 @@ Cyclic codes form an important subclass of linear block codes. In this section, 
 
 Let us first define the operation of cyclic shift of a vector. Consider a vector $\mathbf{v} = \begin{bmatrix} v_0 & v_1 & v_{n-1}\end{bmatrix}$ .
 Then the vector $\mathbf{v}^{(i)}$ obtained by shifting $\mathbf{v}$ cyclically to the right $i$-times is given by <br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; $\mathbf{v}^{(i)} = \begin{bmatrix} v_{n-i} & v_{n-i+1} & . . .  &v_0 & v_1 & . . . &v_{n-i-1}\end{bmatrix}$. &ensp; &ensp;  &ensp; &ensp;&ensp; &ensp;&ensp; (1) <br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; $\mathbf{v}^{(i)} = \begin{bmatrix} v_{n-i} & v_{n-i+1} & . . .  &v_0 & v_1 & . . . &v_{n-i-1}\end{bmatrix}$. &ensp; &ensp;  &ensp;  (1) <br/>
 For a cyclic code, as the name suggests,  cyclic shift of any codeword is also a codeword. This property precisely defines a cyclic code. 
  
  **Definition&ensp;1** &ensp; _A linear block code_ $C(n,k)$ _is said to be a cyclic code if every cyclic shift of a codeword is also a codeword in the given code_ $C(n,k)$. <br/>
@@ -45,8 +45,8 @@ We now summarize some of the properties of the generating polynomial. Details ca
  <br/>
  Let us consider some examples of cyclic codes. 
 <br/>
-<a/>
 <br/>
+
 1\. **Example-1:** Consider the cyclic code of length $n=4$ and dimension $k=2$  with the set of codewords given by $\{ 0000, 1010, 0101, 1111 \}$. Suppose 
 $\mathbf{v}_1 = 0000$, $\mathbf{v}_2 = 1010$, $\mathbf{v}_3 = 0101$, $\mathbf{v}_4 = 1111$. 
 
