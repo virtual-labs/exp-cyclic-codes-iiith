@@ -68,8 +68,9 @@
                             <b>Procedure:</b>
 
                             <li>
-                                Initially, the shift register contents are 0 0 1. This is obtained from the Syndrome
-                                Computation circuit. The contents can be seen in the Simulation area as well as in the
+                                The initial contents of the shift register are obtained from the Syndrome
+                                Computation circuit. Complete the Syndrome Computation Demo before attempting this task.
+                                The contents can be seen in the Simulation area as well as in the
                                 table in <b>Observations</b>.
                             </li>
 
@@ -107,152 +108,301 @@
         </div>
     </div>
     <br>
-
-    <div class="columns is-centered">
-        <div class="column is-11-desktop is-12-tablet is-12-mobile">
-            <div class="v-datalist-container components-list">
-                <p> Decode the received vector <span id="message-bits" style="color: blue;">1011011</span>.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="columns is-centered is-flex-direction-row is-flex-wrap-wrap is-align-content-start"
-        style="margin-top:-1.5%">
-        <div class="column is-8-desktop is-12-tablet is-12-mobile">
-            <div class="box-question">
-                <p id="stage" style="font-size: 2em; font-weight: bold;">Initial stage</p>
-                <div class="image-container">
-                    <img id="image" src="./images/cyclic-decoding.png">
-
-                    <!-- Syndrome Registers/Shift Registers -->
-                    <div class="shift-container-1">
-                        <span id="shift-reg-1">0</span>
-                    </div>
-                    <div class="shift-container-2">
-                        <span id="shift-reg-2">0</span>
-                    </div>
-                    <div class="shift-container-3">
-                        <span id="shift-reg-3">1</span>
-                    </div>
-
-
-                    <!-- Buffer Registers -->
-                    <div class="buffer-container-1">
-                        <span id="buffer-bit-1">1</span>
-                    </div>
-
-                    <div class="buffer-container-2">
-                        <span id="buffer-bit-2">0</span>
-                    </div>
-
-                    <div class="buffer-container-3">
-                        <span id="buffer-bit-3">1</span>
-                    </div>
-
-                    <div class="buffer-container-4">
-                        <span id="buffer-bit-4">1</span>
-                    </div>
-
-                    <div class="buffer-container-5">
-                        <span id="buffer-bit-5">0</span>
-                    </div>
-
-                    <div class="buffer-container-6">
-                        <span id="buffer-bit-6">1</span>
-                    </div>
-
-                    <div class="buffer-container-7">
-                        <span id="buffer-bit-7">1</span>
-                    </div>
-
-                    <form action="" method="get" id="form1" onsubmit="return false">
-                        <!-- Input Fields -->
-                        <div class="input-container-1">
-                            <label for="p1"> </label>
-                            <input type="number" class="fixed-bit" id="p1" min="0" max="1">
-                        </div>
-
-                        <div class="input-container-2">
-                            <label for="p2"> </label>
-                            <input type="number" class="fixed-bit" id="p2" min="0" max="1">
-                        </div>
-
-                        <div class="input-container-3">
-                            <label for="p3"> </label>
-                            <input type="number" class="fixed-bit" id="p3" min="0" max="1">
-                        </div>
-
-                    </form>
-
-                </div>
-
-                <button class="v-button" id="submit-1" onclick="checkAnswer()" form="form1">Submit</button>
-                <button class="v-button" onclick="initial()">Reset</button>
-
-
-            </div>
-        </div>
-
-        <div class="column is-3-desktop is-4-tablet is-12-mobile">
-            <div class="v-datalist-container components-list">
-                <div class="v-datalist-title">Observations</div>
-                <div id="observations">
-                    <span id="correctMessage"></span>
-
-                    <table style="margin-top: 3%;">
-                        <tr>
-                            <th width="120px">Shift</th>
-                            <th width="240px">Register
-                                Contents
-                            </th>
-
-                        </tr>
-                        <tr height="30px">
-                            <td>-</td>
-                            <td>0 0 1</td>
-
-                        </tr>
-                        <tr height="37px">
-                            <td> <span id="t11"> </span> </td>
-                            <td> <span id="t12"> </span> </td>
-
-                        </tr>
-                        <tr height="37px">
-                            <td> <span id="t21"> </span> </td>
-                            <td> <span id="t22"> </span> </td>
-
-                        </tr>
-                        <tr height="37px">
-                            <td> <span id="t31"> </span> </td>
-                            <td> <span id="t32"> </span> </td>
-
-                        </tr>
-                        <tr height="37px">
-                            <td> <span id="t41"> </span> </td>
-                            <td> <span id="t42"> </span> </td>
-                        </tr>
-
-                        <tr height="37px">
-                            <td> <span id="t51"> </span> </td>
-                            <td> <span id="t52"> </span> </td>
-                        </tr>
-
-                        <tr height="37px">
-                            <td> <span id="t61"> </span> </td>
-                            <td> <span id="t62"> </span> </td>
-                        </tr>
-
-                        <tr height="37px">
-                            <td> <span id="t71"> </span> </td>
-                            <td> <span id="t72"> </span> </td>
-                        </tr>
-
-                    </table>
+    <section id="example-1">
+        <div class="columns is-centered">
+            <div class="column is-11-desktop is-12-tablet is-12-mobile">
+                <div class="v-datalist-container components-list">
+                    <p> Decode the received vector <span id="message-bits" style="color: blue;">1011011</span>.
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="columns is-centered is-flex-direction-row is-flex-wrap-wrap is-align-content-start"
+            style="margin-top:-1.5%">
+            <div class="column is-8-desktop is-12-tablet is-12-mobile">
+                <div class="box-question">
+                    <p id="stage" style="font-size: 2em; font-weight: bold;">Initial Stage</p>
+                    <div class="image-container">
+                        <img id="image" src="./images/cyclic-decoding.png">
+
+                        <!-- Syndrome Registers/Shift Registers -->
+                        <div class="shift-container-1">
+                            <span id="shift-reg-1">0</span>
+                        </div>
+                        <div class="shift-container-2">
+                            <span id="shift-reg-2">0</span>
+                        </div>
+                        <div class="shift-container-3">
+                            <span id="shift-reg-3">1</span>
+                        </div>
+
+
+                        <!-- Buffer Registers -->
+                        <div class="buffer-container-1">
+                            <span id="buffer-bit-1">1</span>
+                        </div>
+
+                        <div class="buffer-container-2">
+                            <span id="buffer-bit-2">0</span>
+                        </div>
+
+                        <div class="buffer-container-3">
+                            <span id="buffer-bit-3">1</span>
+                        </div>
+
+                        <div class="buffer-container-4">
+                            <span id="buffer-bit-4">1</span>
+                        </div>
+
+                        <div class="buffer-container-5">
+                            <span id="buffer-bit-5">0</span>
+                        </div>
+
+                        <div class="buffer-container-6">
+                            <span id="buffer-bit-6">1</span>
+                        </div>
+
+                        <div class="buffer-container-7">
+                            <span id="buffer-bit-7">1</span>
+                        </div>
+
+                        <form action="" method="get" id="form1" onsubmit="return false">
+                            <!-- Input Fields -->
+                            <div class="input-container-1">
+                                <label for="p1"> </label>
+                                <input type="number" class="fixed-bit" id="p1" min="0" max="1">
+                            </div>
+
+                            <div class="input-container-2">
+                                <label for="p2"> </label>
+                                <input type="number" class="fixed-bit" id="p2" min="0" max="1">
+                            </div>
+
+                            <div class="input-container-3">
+                                <label for="p3"> </label>
+                                <input type="number" class="fixed-bit" id="p3" min="0" max="1">
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <button class="v-button" id="submit-1" onclick="checkAnswer()" form="form1">Submit</button>
+                    <button class="v-button" onclick="page2()">Next</button>
+
+
+                </div>
+            </div>
+
+            <div class="column is-3-desktop is-4-tablet is-12-mobile">
+                <div class="v-datalist-container components-list">
+                    <div class="v-datalist-title">Observations</div>
+                    <div id="observations1">
+                        <span id="correctMessage"></span>
+
+                        <table style="margin-top: 3%;">
+                            <tr>
+                                <th width="120px">Shift</th>
+                                <th width="240px">Register
+                                    Contents
+                                </th>
+
+                            </tr>
+                            <tr height="30px">
+                                <td>-</td>
+                                <td>0 0 1</td>
+
+                            </tr>
+                            <tr height="37px">
+                                <td> <span id="t11"> </span> </td>
+                                <td> <span id="t12"> </span> </td>
+
+                            </tr>
+                            <tr height="37px">
+                                <td> <span id="t21"> </span> </td>
+                                <td> <span id="t22"> </span> </td>
+
+                            </tr>
+                            <tr height="37px">
+                                <td> <span id="t31"> </span> </td>
+                                <td> <span id="t32"> </span> </td>
+
+                            </tr>
+                            <tr height="37px">
+                                <td> <span id="t41"> </span> </td>
+                                <td> <span id="t42"> </span> </td>
+                            </tr>
+
+                            <tr height="37px">
+                                <td> <span id="t51"> </span> </td>
+                                <td> <span id="t52"> </span> </td>
+                            </tr>
+
+                            <tr height="37px">
+                                <td> <span id="t61"> </span> </td>
+                                <td> <span id="t62"> </span> </td>
+                            </tr>
+
+                            <tr height="37px">
+                                <td> <span id="t71"> </span> </td>
+                                <td> <span id="t72"> </span> </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="example-2" style="display: none;">
+        <div class="columns is-centered">
+            <div class="column is-11-desktop is-12-tablet is-12-mobile">
+                <div class="v-datalist-container components-list">
+                    <p> Decode the received vector <span style="color: blue;">0110111</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered is-flex-direction-row is-flex-wrap-wrap is-align-content-start"
+            style="margin-top:-1.5%">
+            <div class="column is-8-desktop is-12-tablet is-12-mobile">
+                <div class="box-question">
+                    <p id="ex2-stage" style="font-size: 2em; font-weight: bold;">Initial Stage</p>
+                    <div class="image-container">
+                        <img id="image" src="./images/cyclic-decoding.png">
+
+                        <!-- Syndrome Registers/Shift Registers -->
+                        <div class="shift-container-1">
+                            <span id="ex2-shift-reg-1">0</span>
+                        </div>
+                        <div class="shift-container-2">
+                            <span id="ex2-shift-reg-2">1</span>
+                        </div>
+                        <div class="shift-container-3">
+                            <span id="ex2-shift-reg-3">0</span>
+                        </div>
+
+
+                        <!-- Buffer Registers -->
+                        <div class="buffer-container-1">
+                            <span id="ex2-buffer-bit-1">0</span>
+                        </div>
+
+                        <div class="buffer-container-2">
+                            <span id="ex2-buffer-bit-2">1</span>
+                        </div>
+
+                        <div class="buffer-container-3">
+                            <span id="ex2-buffer-bit-3">1</span>
+                        </div>
+
+                        <div class="buffer-container-4">
+                            <span id="ex2-buffer-bit-4">0</span>
+                        </div>
+
+                        <div class="buffer-container-5">
+                            <span id="ex2-buffer-bit-5">1</span>
+                        </div>
+
+                        <div class="buffer-container-6">
+                            <span id="ex2-buffer-bit-6">1</span>
+                        </div>
+
+                        <div class="buffer-container-7">
+                            <span id="ex2-buffer-bit-7">1</span>
+                        </div>
+
+                        <form action="" method="get" id="form2" onsubmit="return false">
+                            <!-- Input Fields -->
+                            <div class="input-container-1">
+                                <label for="p1"> </label>
+                                <input type="number" class="fixed-bit" id="ex2-p1" min="0" max="1">
+                            </div>
+
+                            <div class="input-container-2">
+                                <label for="p2"> </label>
+                                <input type="number" class="fixed-bit" id="ex2-p2" min="0" max="1">
+                            </div>
+
+                            <div class="input-container-3">
+                                <label for="p3"> </label>
+                                <input type="number" class="fixed-bit" id="ex2-p3" min="0" max="1">
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <button class="v-button" id="submit-2" onclick="checkAnswer2()" form="form2">Submit</button>
+                    <button class="v-button" onclick="page1()">Previous</button>
+
+
+                </div>
+            </div>
+
+            <div class="column is-3-desktop is-4-tablet is-12-mobile">
+                <div class="v-datalist-container components-list">
+                    <div class="v-datalist-title">Observations</div>
+                    <div id="observations2">
+                        <span id="ex2-correctMessage"></span>
+
+                        <table style="margin-top: 3%;">
+                            <tr>
+                                <th width="120px">Shift</th>
+                                <th width="240px">Register
+                                    Contents
+                                </th>
+
+                            </tr>
+                            <tr height="30px">
+                                <td>-</td>
+                                <td>0 1 0</td>
+
+                            </tr>
+                            <tr height="37px">
+                                <td> <span id="ex2-t11"> </span> </td>
+                                <td> <span id="ex2-t12"> </span> </td>
+
+                            </tr>
+                            <tr height="37px">
+                                <td> <span id="ex2-t21"> </span> </td>
+                                <td> <span id="ex2-t22"> </span> </td>
+
+                            </tr>
+                            <tr height="37px">
+                                <td> <span id="ex2-t31"> </span> </td>
+                                <td> <span id="ex2-t32"> </span> </td>
+
+                            </tr>
+                            <tr height="37px">
+                                <td> <span id="ex2-t41"> </span> </td>
+                                <td> <span id="ex2-t42"> </span> </td>
+                            </tr>
+
+                            <tr height="37px">
+                                <td> <span id="ex2-t51"> </span> </td>
+                                <td> <span id="ex2-t52"> </span> </td>
+                            </tr>
+
+                            <tr height="37px">
+                                <td> <span id="ex2-t61"> </span> </td>
+                                <td> <span id="ex2-t62"> </span> </td>
+                            </tr>
+
+                            <tr height="37px">
+                                <td> <span id="ex2-t71"> </span> </td>
+                                <td> <span id="ex2-t72"> </span> </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>

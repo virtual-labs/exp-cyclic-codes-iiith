@@ -128,7 +128,10 @@ img {
 
     #shift-reg-1,
     #shift-reg-2,
-    #shift-reg-3 {
+    #shift-reg-3,
+    #ex2-shift-reg-1,
+    #ex2-shift-reg-2,
+    #ex2-shift-reg-3 {
         font-size: 150%;
         font-weight: bold;
         color: yellowgreen;
@@ -145,7 +148,14 @@ img {
     #buffer-bit-4,
     #buffer-bit-5,
     #buffer-bit-6,
-    #buffer-bit-7 {
+    #buffer-bit-7,
+    #ex2-buffer-bit-1,
+    #ex2-buffer-bit-2,
+    #ex2-buffer-bit-3,
+    #ex2-buffer-bit-4,
+    #ex2-buffer-bit-5,
+    #ex2-buffer-bit-6,
+    #ex2-buffer-bit-7 {
         font-size: 150%;
         font-weight: bold;
         color: darkviolet;
@@ -174,7 +184,10 @@ img {
 
     #shift-reg-1,
     #shift-reg-2,
-    #shift-reg-3 {
+    #shift-reg-3,
+    #ex2-shift-reg-1,
+    #ex2-shift-reg-2,
+    #ex2-shift-reg-3 {
         font-size: 75%;
         font-weight: bold;
         color: yellowgreen;
@@ -191,7 +204,14 @@ img {
     #buffer-bit-4,
     #buffer-bit-5,
     #buffer-bit-6,
-    #buffer-bit-7 {
+    #buffer-bit-7,
+    #ex2-buffer-bit-1,
+    #ex2-buffer-bit-2,
+    #ex2-buffer-bit-3,
+    #ex2-buffer-bit-4,
+    #ex2-buffer-bit-5,
+    #ex2-buffer-bit-6,
+    #ex2-buffer-bit-7 {
         font-size: 75%;
         font-weight: bold;
         color: darkviolet;
@@ -201,4 +221,9 @@ img {
         align-items: center;
         line-height: 12%;
     }
+}
+
+#observations1,
+#observations2 {
+    font-size: 1.25em;
 }
