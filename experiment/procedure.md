@@ -17,7 +17,7 @@ The task in Demo is self explanatory. There are three tasks in Simulation.
 *  If the answer is correct, click on <b>Reset</b> to try these steps again with a different binary message.
 ---
 **Procedure for Shift Register Encoding:**
-*  Initially, the shift register contents are 0 0 0. The input bit to the circuit is the rightmost bit of the 4-bit message. This can be seen in the Simulation area as well as in the table in <b>Observations</b>.
+*   The initial contents of the shift register are obtained from the Syndrome Computation circuit. Complete the Syndrome Computation Demo before attempting this task. The contents can be seen in the Simulation area as well as in the table in <b>Observations</b>.
 *   Enter the next state values in all the fields provided and click on <b>Submit</b>.
 *   The correctness of the entered answer is displayed in <b>Observations</b>.
 *   If the entered answer is correct, the contents of the shift registers will be updated in the Simulation area and the next input message bit will be also displayed. This can also be seen in the table in <b>Observations</b>.
@@ -34,7 +34,7 @@ The task in Demo is self explanatory. There are three tasks in Simulation.
 *   If the entered answer is correct, the contents of the shift registers will be updated in the Simulation area. This can also be seen in the table in <b>Observations</b>. The contents of the buffer register will also get updated in the Simulation area.
 *   Repeat this procedure.
 *   After seven shifts, the buffer register contains the decoded codeword.
-*   <b>Reset</b> - Resets the simulation.
+*   <b>Reset</b> - Displays the next example.
 ---
 
 							
