@@ -1,39 +1,69 @@
 {
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+    "version": 2.0,
+    "questions": [
+      {
+        "question": "1. Let $\\mathbf{g}(X)$ is the generator polynomial of $(n,k)$ cyclic code. The codeword of the message polynomial $\\mathbf{u}(X)$ is $\\mathbf{v}(X) = \\mathbf{u}(X) \\mathbf{g}(X)$. For the same message polynomial $\\mathbf{u}(X)$, the codeword obtained by shift register based encoder is $\\mathbf{v}^{'}(X) = \\mathbf{b}(X) + X^{n-k}\\mathbf{u}(X)$. Here, $\\mathbf{b}(X)$ be the remainder obtained when the polynomial $X^{n-k}\\mathbf{u}(X)$ is divided by $\\mathbf{g}(X)$. Is $\\mathbf{v}(X) = \\mathbf{v}^{'}(X) $ for all message polynomials?",
+        "answers": {
+          "a": "Yes",
+          "b": "No"
+        },
+        "correctAnswer": "b",
+        "difficulty": "beginner"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      {
+        "question": "2. Which of the following codes is not a cyclic code?",
+        "answers": {
+          "a": "$\\mathcal{C} = \\{ 0000, 1111 \\}$ (Repetition Code over $\\mathbb{F}_{2}$)",
+          "b": "$\\mathcal{C} = \\{ 0000, 0011, 0101, 0110, 1001, 1010, 1100, 1111 \\}$",
+          "c": "$\\mathcal{C} = \\{ 0000000, 001011, 010110, 011101, 100101, 101110, 110011, 111000 \\}$",
+          "d": "None of the above"
+        },
+        "correctAnswer": "c",
+        "difficulty": "beginner"
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+      {
+        "question": "3. Consider $(7,4)$ cyclic code with the generator polynomial  $\\mathbf{g}(X) = 1+X+X^{3}$. Using shift register based encoder, find the codeword of the message $\\mathbf{u} = \\begin{bmatrix} 0 & 0 & 0 & 1 \\end{bmatrix}$",
+        "answers": {
+          "a": "$\\begin{bmatrix} 1 & 0 & 1 & 0 & 0 & 0 & 1 \\end{bmatrix}$",
+          "b": "$\\begin{bmatrix} 0 & 1 & 1 & 0 & 0 & 0 & 1 \\end{bmatrix}$",
+          "c": "$\\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 0 & 1 \\end{bmatrix}$",
+          "d": "$\\begin{bmatrix} 1 &  1 & 0 & 0 & 0 & 0 & 1 \\end{bmatrix}$"
+        },
+        "correctAnswer": "b",
+        "difficulty": "beginner"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      {
+        "question": "4. Consider the Meggitt decoder for a cyclic code given in Figure \ref{fig:meggitt_decoder_quiz}. Suppose the content in  the buffer register is $\\begin{bmatrix} 1 & 1 & 1 & 1 & 1 &  1 & 0 \\end{bmatrix}$ and in the buffer register is $\\begin{bmatrix} 1 & 0 & 1 \\end{bmatrix}$. What will be the contents of the, buffer register, syndrome register and out put of the decoder at the next time instant? <img src='./images/exp8-fig12.png'></img>",
+        "answers": {
+          "a": "$\\begin{bmatrix} 0 & 1 & 1 & 1 & 1 &  1 & 1 \\end{bmatrix}$, $\\begin{bmatrix} 1 & 0 & 0 \\end{bmatrix}$ and 0.",
+          "b": "$\\begin{bmatrix} 1 & 1 & 1 & 1 & 1 &  1 & 1 \\end{bmatrix}$, $\\begin{bmatrix} 0 & 0 & 0 \\end{bmatrix}$ and 1.",
+          "c": "$\\begin{bmatrix} 0 & 1 & 1 & 1 & 1 &  1 & 1 \\end{bmatrix}$, $\\begin{bmatrix} 0 & 0 & 0 \\end{bmatrix}$ and 0.",
+          "d": "$\\begin{bmatrix} 1 & 1 & 1 & 1 & 1 &  1 & 1 \\end{bmatrix}$, $\\begin{bmatrix} 1 & 0 & 0 \\end{bmatrix}$ and 1."
+        },
+        "correctAnswer": "b",
+        "difficulty": "beginner"
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+      {
+        "question": "5. Consider $(7,4)$ cyclic code with the generator polynomial  $\\mathbf{g}(X) = 1+X^{2}+X^{3}$. The syndrome polynomial of $\\mathbf{r}(X) = X^{6}$ is ",
+        "answers": {
+          "a": "$1+X$",
+          "b": "$1+X^2$",
+          "c": "$X+X^2$",
+          "d": "$1+X+X^2$"
+        },
+        "correctAnswer": "c",
+        "difficulty": "beginner"
+      },
+      {
+        "question": "6. Consider $(7,4)$ cyclic code with the generator polynomial  $\\mathbf{g}(X) = 1+X^{2}+X^{3}$. For this code, the error pattern detection circuit (detector) of the decoder has to be designed in such a way that the output of the detector is $1$ only if content of the syndrome register is ",
+        "answers": {
+          "a": "$\\begin{bmatrix} 0 & 1 & 0 \\end{bmatrix}$",
+          "b": "$\\begin{bmatrix} 0 & 1 & 1 \\end{bmatrix}$",
+          "c": "$\\begin{bmatrix} 1 & 0 & 1 \\end{bmatrix}$",
+          "d": "$\\begin{bmatrix} 1 & 1 & 1 \\end{bmatrix}$"
+        },
+        "correctAnswer": "b",
+        "difficulty": "beginner"
+      }
+    ]
+  }
