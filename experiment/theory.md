@@ -263,3 +263,4 @@ $$
 _The output of the decoder at $i$th shift cycle is $r_{7-i} \oplus Output$, and it is the decoded bit of the received vector bit $r_{7-i}$. The error correction process of the circuit shown in Figure 6 is given in Table 3_.
 <br>
 ![alt text](./images/exp8-fig10.png)
+
