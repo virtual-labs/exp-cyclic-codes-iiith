@@ -95,7 +95,7 @@ $$
 It can be seen from Eq.(5) that the codeword corresponding to message vector $\begin{bmatrix} 1 & 1 & 0 & 0\end{bmatrix}$ will be $\begin{bmatrix} 1 & 0 & 1 & 1 & 1 & 0 & 0\end{bmatrix}$. 
 All possible codewords of this code can be obtained by considering the message polynomials corresponding to all possible vectors in $\mathbb{F}_2^k$. These are tabulated below. Students are encouraged to verify the calculations towards this by themselves.
 <br>
-![alt text](./images/exp8-fig1.png)
+<img title="Fig1" src="./images/exp8-fig1.png">
 
 ## 2 &nbsp; &nbsp; Shift register based encoder and decoder
 For encoding a message $\mathbf{u} \in \mathbb{F}_2^k$ using a cyclic code, one can consider a generator matrix $G$ of the given code and obtain the corresponding codeword as $\mathbf{v} = \mathbf{u}G$, since cyclic code is a linear block code. However, cyclic codes have rich algebraic structures and this allows to perform encoding operation much efficiently. Similarly, while one can perform decoding of cyclic codes via standard array and syndrome decoding (see Experiment-4), owing to these structural properties, decoding can be performed efficiently. In this experiment, we shall focus on shift register based encoder and decoder for cyclic codes. 
@@ -113,7 +113,7 @@ $$
 
 We shall next see how Eq.(6) can be implemented using shift registers. The encoding circuit corresponding to this is shown in Figure~1. When the value of $g_i=1$, the corresponding connection will present, for $i = 2, 3, \ldots, n-k-1$. Similarly when $g_i=0$, the corresponding connection will not be there. Observe that there are $n-k$ shift registers. The contents of the shift registers are denoted by $b_0, b_1, \ldots, b_{n-k-1}$. Note that when the operation of the circuit is completed, the values of $b_0, b_1, \ldots, b_{n-k-1}$ will provide the coefficients of the required remainder polynomial $\mathbf{b}(X)$.
 <br>
-![alt text](./images/exp8-fig2.png)
+<img title="Fig2" src="./images/exp8-fig2.png">
 
 1. The contents of all shift registers are initialized to zero.
 2. Turn on the gate.
@@ -132,7 +132,7 @@ $$
 $\textbf{Encoder for Example-2:}$
 Let us consider Example-2 to illustrate encoding steps. The encoder for Example-2 is shown in Figure-2. Suppose at some time instant, the contents of the shift register are $\begin{bmatrix} b_0 & b_1 & b_2 \end{bmatrix} = \begin{bmatrix} 0 & 1 & 1 \end{bmatrix}$ and the input message bit is $1$. Then at the next time instant, contents of the shift registers will be $\begin{bmatrix} b_0 & b_1 & b_2 \end{bmatrix} = \begin{bmatrix} 0 & 0 & 1 \end{bmatrix}$.
 <br>
-![alt text](./images/exp8-fig3.png)
+<img title="Fig3" src="./images/exp8-fig3.png">
 
 ## 2.2 &nbsp; &nbsp; Shift register based decoder
 In Experiment-4, we studied syndrome decoding for linear block codes. The key steps in syndrome decoding consist of computing the syndrome of the received vector and associating it with the error pattern, which is then added to obtain the decoded codeword. For cyclic codes, these operations can be performed efficiently using a shift register based decoder, and the cyclic structure allows us to decode a received vector serially, which will be discussed in this section. 
@@ -158,13 +158,11 @@ $\textbf{Example-1:}$
          0 & 0 & 1
     \end{bmatrix}.$
 <br>
-![alt text](./images/exp8-fig4.png)
+<img title="Fig4" src="./images/exp8-fig4.png">
 
 Dividing $\mathbf{r}(X)$ by $\mathbf{g}(X)$ to obtain the remainder $\mathbf{s}(X)$ can be accomplished by the division circuit as shown in Figure 4. This circuit is referred as the syndrome circuit, and its shift register is known as the syndrome register. The syndrome circuit is identical to the $(n-k)$-stage encoding circuit as shown in Figure 1. But the only difference is that the received polynomial $\mathbf{r}(X)$ is shifted into the register from the left end instead of the right end.
 <br>
-![alt text](./images/exp8-fig5.png)
-
-
+<img title="Fig5" src="./images/exp8-fig5.png">
 
 A few properties of the syndrome that are useful in decoding cyclic codes are listed below without proof.
 1. The polynomial $\mathbf{r}^{(1)}(X) = r_{n-1} + r_0 X + r_1X^{2}+r_2X^3+\ldots + r_{n-2}X^{n-1}$ is a cyclic shift of $\mathbf{r}(X) = r_0 + r_1X+r_2X^2+\ldots + r_{n-1}X^{n-1} $. The syndrome of $\mathbf{r}^{(1)}(X)$ is denoted by $\mathbf{s}^{(1)}(X)$. The syndrome $\mathbf{s}^{(1)}(X)$ is the remainder obtained by dividing $X \mathbf{s}(X)$ by the generator polynomial $\mathbf{g}(X)$ (for proof, refer [1, Section 5.4]). The  syndrome $\mathbf{s}^{(1)}(X)$ for $\mathbf{r}^{(1)}(X)$ can calculate with the same syndrome circuit as follows.
@@ -183,7 +181,7 @@ A general decoder of a cyclic code (shown in Figure 5), consists of three major 
 
 After forming the syndrome in the syndrome register, the error detection and correction process starts serially from bit $r_{n-1}$ to $r_{0}$. The contents of the syndrome register are fed to the error-pattern detector, which is a combinational logic circuit. It is designed in such a way that the output of the detector is $1$ if there is an error in the rightmost bit of the register, otherwise $0$. To remove the error effect in the syndrome and received vector, the following operation takes place in the decoder at the same time instant:  i) the syndrome register and buffer register shifted once, ii) the output of the error-pattern detector is fed into the syndrome register from the left end through an XOR gate and iii) the output is also fed into the buffer register through an XOR gate. The above operation will be done $n$ number of time instances to correct all the $n$ bits of $\mathbf{r}$. Notice that during each shift operation, the vector in the buffer register gets modified, and its corresponding syndrome is formed in the syndrome register. For a more detailed understanding of a general decoder, students can refer to [1, Section 5.5]. Hereafter, we will look into the entire decoding process of a Meggitt decoder.
 <br>
-![alt text](./images/exp8-fig6.png)
+<img title="Fig6" src="./images/exp8-fig6.png">
 
 ### 2.2.2 &nbsp; &nbsp; Meggitt decoder
 In syndrome decoding (refer to Experiment-4), we use a syndrome table that consists of syndromes of all correctable erasure patterns. Those syndromes are called error syndromes. The Meggitt decoder in cyclic codes is a method for error correction that efficiently computes error syndromes and corrects errors using a limited number of error syndromes. This approach eliminates the necessity for a syndrome table. In the context of a single-error-correcting code, the Meggitt decoder is simple and appropriate. It can determine all syndromes based on just one error syndrome.
@@ -193,7 +191,7 @@ In this experiment to discuss the Meggitt decoder, we consider the decoding of a
 \end{bmatrix}$ has zeros at all positions except at $e_{i}$ and its corresponding error polynomial $\mathbf{e}(X) = X^{i}$.
 The seven single-error patterns and their corresponding syndrome are listed in Table 1. Among all these syndromes, our aim is to find one such error syndrome that determines all error syndromes for this Meggitt decoder. In the Meggitt decoder, the design of the error pattern detection circuit depends upon that particular error syndrome.
 <br>
-![alt text](./images/exp8-fig7.png)
+<img title="Fig7" src="./images/exp8-fig7.png">
 
 Recall the decoding process of a general decoder. The task of the error pattern detection circuit is to determine if the rightmost bit of the vector in the buffer register contains an error. This can be achieved by examining the corresponding syndrome formed in the syndrome register. Typically, finding an error pattern detector is crucial for a decoder. In some cases, error pattern detection circuits are simple. The error pattern detection circuit for $(7,4)$ cyclic code generated by $\mathbf{g}(X) = 1 +X +X^3$ is discussed below.
 
@@ -211,7 +209,7 @@ Recall the decoding process of a general decoder. The task of the error pattern 
     \end{bmatrix}$. This can be accomplished with a single three-input AND gate. Which gives the output $1$ only if the contents of the syndrome register are $\begin{bmatrix} 1 & 0 & 1 \end{bmatrix}$, otherwise $0$.
 * We now refer to this specific single three-input AND gate circuit as the Error Pattern Detector (EPD) in our current experiment. The complete decoding circuit is shown in Figure 6.
 <br>
-![alt text](./images/exp8-fig8.png)
+<img title="Fig8" src="./images/exp8-fig8.png">
 
 The decoding procedure of the Meggitt decoder for $(7,4)$ cyclic code generated by $\mathbf{g}(X) = 1 +X +X^3$ (see Figure 6) is summarized below.
 
@@ -249,7 +247,7 @@ _At first, the syndrome will be formed after entering the entire received vector
          1 & 1 & 0 & 1 & {\color{red}1}  &  0 & 0
          \end{bmatrix}$, the contents of both the syndrome register and the buffer register at each time instant are given in Table 2_. 
 <br>
-![alt text](./images/exp8-fig9.png)   
+<img title="Fig9" src="./images/exp8-fig9.png">
 
 
 _Therefore, the syndrome of the received vector is $ \begin{bmatrix}
@@ -262,5 +260,6 @@ $$
 $$
 _The output of the decoder at $i$th shift cycle is $r_{7-i} \oplus Output$, and it is the decoded bit of the received vector bit $r_{7-i}$. The error correction process of the circuit shown in Figure 6 is given in Table 3_.
 <br>
-![alt text](./images/exp8-fig10.png)
+<img title="Fig10" src="./images/exp8-fig10.png">
+
 
