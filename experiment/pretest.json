@@ -13,7 +13,7 @@
         "difficulty": "beginner"
       },
       {
-        "question": "2. Consider two polynomial $\\mathbf{f}(X) = 1+X+X^7$ and $\\mathbf{g}(X) = X^2+X^3+X^5$ in $\\mathbb{F}_2[X]$. What will be $7\mathbf{f}(X)\\mathbf{g}(X)$?",
+        "question": "2. Consider two polynomial $\\mathbf{f}(X) = 1+X+X^7$ and $\\mathbf{g}(X) = X^2+X^3+X^5$ in $\\mathbb{F}_2[X]$. What will be $\\mathbf{f}(X)\\mathbf{g}(X)$?",
         "answers": {
           "a": "$X^2+2X^3+X^4+X^5+X^6+X^9+X^{10}+X^{12}$",
           "b": "$X^2+X^4+X^5+X^6+X^9+X^{12}$",
