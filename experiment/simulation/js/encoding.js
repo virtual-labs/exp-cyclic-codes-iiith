@@ -58,67 +58,67 @@ function check() {
     const cEntered = document.getElementById("cEntered");
 
     if (inpArray == "0000") {
-        expectedOut = "000" + inpArray;
+        expectedOut = "000000";
     }
 
     else if (inpArray == "0001") {
-        expectedOut = "101" + inpArray;
+        expectedOut = "0001101";
     }
 
     else if (inpArray == "0010") {
-        expectedOut = "111" + inpArray;
+        expectedOut = "0011010";
     }
 
     else if (inpArray == "0011") {
-        expectedOut = "010" + inpArray;
+        expectedOut = "0010111";
     }
 
     else if (inpArray == "0100") {
-        expectedOut = "011" + inpArray;
+        expectedOut = "0110100";
     }
 
     else if (inpArray == "0101") {
-        expectedOut = "110" + inpArray;
+        expectedOut = "0111001";
     }
 
     else if (inpArray == "0110") {
-        expectedOut = "100" + inpArray;
+        expectedOut = "0101110";
     }
 
     else if (inpArray == "0111") {
-        expectedOut = "001" + inpArray;
+        expectedOut = "0100011";
     }
 
     else if (inpArray == "1000") {
-        expectedOut = "110" + inpArray;
+        expectedOut = "1101000";
     }
 
     else if (inpArray == "1001") {
-        expectedOut = "011" + inpArray;
+        expectedOut = "1100101";
     }
 
     else if (inpArray == "1010") {
-        expectedOut = "001" + inpArray;
+        expectedOut = "1110010";
     }
 
     else if (inpArray == "1011") {
-        expectedOut = "100" + inpArray;
+        expectedOut = "1111111";
     }
 
     else if (inpArray == "1100") {
-        expectedOut = "101" + inpArray;
+        expectedOut = "1011100";
     }
 
     else if (inpArray == "1101") {
-        expectedOut = "000" + inpArray;
+        expectedOut = "1010001";
     }
 
     else if (inpArray == "1110") {
-        expectedOut = "010" + inpArray;
+        expectedOut = "1000110";
     }
 
     else if (inpArray == "1111") {
-        expectedOut = "111" + inpArray;
+        expectedOut = "1001011";
     }
 
 
