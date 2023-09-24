@@ -1,0 +1,25 @@
+
+/home/runner/work/exp-cyclic-codes-iiith/exp-cyclic-codes-iiith/experiment/simulation/js/decoding.js
+    3:10  warning  'checkAnswer' is defined but never used   no-unused-vars
+  349:10  warning  'checkAnswer2' is defined but never used  no-unused-vars
+  693:10  warning  'page1' is defined but never used         no-unused-vars
+  728:10  warning  'page2' is defined but never used         no-unused-vars
+
+/home/runner/work/exp-cyclic-codes-iiith/exp-cyclic-codes-iiith/experiment/simulation/js/demo.js
+   3:10  warning  'next' is defined but never used          no-unused-vars
+   4:11  warning  'obs' is assigned a value but never used  no-unused-vars
+  81:10  warning  'res' is defined but never used           no-unused-vars
+
+/home/runner/work/exp-cyclic-codes-iiith/exp-cyclic-codes-iiith/experiment/simulation/js/encoding.js
+    4:10  warning  'display' is defined but never used  no-unused-vars
+   49:10  warning  'check' is defined but never used    no-unused-vars
+  175:10  warning  'initial' is defined but never used  no-unused-vars
+
+/home/runner/work/exp-cyclic-codes-iiith/exp-cyclic-codes-iiith/experiment/simulation/js/sr-encoding.js
+   28:10  warning  'checkAnswer' is defined but never used     no-unused-vars
+   71:21  warning  'j' is assigned a value but never used      no-unused-vars
+  125:10  warning  'verifyCodeword' is defined but never used  no-unused-vars
+  180:10  warning  'initial' is defined but never used         no-unused-vars
+
+✖ 14 problems (0 errors, 14 warnings)
+
