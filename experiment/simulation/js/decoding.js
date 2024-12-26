@@ -89,11 +89,13 @@ function checkAnswer() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -129,11 +131,13 @@ function checkAnswer() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -168,11 +172,13 @@ function checkAnswer() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -207,11 +213,13 @@ function checkAnswer() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -246,11 +254,13 @@ function checkAnswer() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -285,11 +295,13 @@ function checkAnswer() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -330,11 +342,13 @@ function checkAnswer() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -435,11 +449,13 @@ function checkAnswer2() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -475,11 +491,13 @@ function checkAnswer2() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -514,11 +532,13 @@ function checkAnswer2() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -553,11 +573,13 @@ function checkAnswer2() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -592,11 +614,13 @@ function checkAnswer2() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -631,11 +655,13 @@ function checkAnswer2() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
@@ -676,11 +702,13 @@ function checkAnswer2() {
             else {
                 if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                     obs.innerHTML = "<b>Wrong Again :(</b>";
+                    alert('Wrong Again :(');
                     obs.style.color = "red";
                 }
 
                 else {
                     obs.innerHTML = "<b>Wrong Answer :(</b>";
+                    alert('Wrong Answer :(');
                     obs.style.color = "red";
                 }
             }
