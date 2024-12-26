@@ -96,12 +96,14 @@ function checkAnswer() {
 
             if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                 obs.innerHTML = "<b>Wrong Again :(</b>";
+                alert('Wrong Again :(');
                 obs.style.color = "red";
                 return;
             }
 
             else {
                 obs.innerHTML = "<b>Wrong Answer :(</b>";
+                alert('Wrong Answer :(');
                 obs.style.color = "red";
                 return;
             }
@@ -164,12 +166,14 @@ function verifyCodeword() {
         else {
             if (obs.innerHTML == "<b>Wrong Answer :(</b>") {
                 obs.innerHTML = "<b>Wrong Again :(</b>";
+                alert('Wrong Again :(');
                 obs.style.color = "red";
                 return;
             }
 
             else {
                 obs.innerHTML = "<b>Wrong Answer :(</b>";
+                alert('Wrong Answer :(');
                 obs.style.color = "red";
                 return;
             }
