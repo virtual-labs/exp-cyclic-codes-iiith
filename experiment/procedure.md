@@ -1,11 +1,4 @@
-There are two parts in this experiment
-<br>
-
-1. Demo
-2. Simulation
-
-The task in Demo is self explanatory. There are three tasks in Simulation.
-<br>
+There are three tasks in Simulation.
 <br>
 
 **Procedure for Encoding:**
