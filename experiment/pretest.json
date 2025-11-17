@@ -95,13 +95,132 @@
         "d": "5"
       },
       "explanations": {
-        "a": "Correct! The error at $X^3$ is corrected after 4 shifts.",
+        "a": "Correct! The error at $X^3$ is corrected after 4 shifts $(6-3+1)$.",
         "b": "Incorrect. The error is not corrected after 3 shifts.",
         "c": "Incorrect. The error is not corrected after 2 shifts.",
         "d": "Incorrect. The error is not corrected after 5 shifts."
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
+    },
+    {
+      "question": "7. For a $(15, 11)$ cyclic code, what is the number of shift registers required in the encoder circuit?",
+      "answers": {
+        "a": "11",
+        "b": "15",
+        "c": "4",
+        "d": "26"
+      },
+      "explanations": {
+        "a": "Incorrect. The number of shift registers is $n-k$, not $k$.",
+        "b": "Incorrect. The number of shift registers is not equal to $n$.",
+        "c": "Correct! The number of shift registers required is $n-k = 15-11 = 4$.",
+        "d": "Incorrect. This is the sum $n+k$, which is not relevant."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "8. If $\\mathbf{g}(X) = 1 + X^2 + X^3$ is the generator polynomial of a $(7, 4)$ cyclic code, which of the following must be true?",
+      "answers": {
+        "a": "$\\mathbf{g}(X)$ divides $X^7 - 1$",
+        "b": "$\\mathbf{g}(X)$ divides $X^7 + 1$",
+        "c": "$\\mathbf{g}(X)$ divides $X^4 + 1$",
+        "d": "$\\mathbf{g}(X)$ divides $X^4 - 1$"
+      },
+      "explanations": {
+        "a": "Incorrect. Over $\\mathbb{F}_2$, $X^7 - 1 = X^7 + 1$, but this is the correct concept.",
+        "b": "Correct! The generator polynomial must divide $X^n + 1 = X^7 + 1$ for a cyclic code.",
+        "c": "Incorrect. The generator polynomial divides $X^n + 1$, not $X^k + 1$.",
+        "d": "Incorrect. The generator polynomial divides $X^n + 1$, not $X^k - 1$."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "9. In the syndrome computation circuit, after shifting the entire received vector into the syndrome register, what does the syndrome represent?",
+      "answers": {
+        "a": "The quotient when $\\mathbf{r}(X)$ is divided by $\\mathbf{g}(X)$",
+        "b": "The remainder when $\\mathbf{r}(X)$ is divided by $\\mathbf{g}(X)$",
+        "c": "The product of $\\mathbf{r}(X)$ and $\\mathbf{g}(X)$",
+        "d": "The error pattern polynomial"
+      },
+      "explanations": {
+        "a": "Incorrect. The syndrome is the remainder, not the quotient.",
+        "b": "Correct! The syndrome is $\\mathbf{s}(X) = \\mathbf{r}(X) \\mod \\mathbf{g}(X)$, which is the remainder.",
+        "c": "Incorrect. The syndrome is not a product.",
+        "d": "Incorrect. The syndrome helps identify the error pattern but is not the error pattern itself."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "10. For a $(7, 4)$ cyclic code with generator polynomial $\\mathbf{g}(X) = 1 + X + X^3$, if the syndrome is $\\begin{bmatrix} 1 & 0 & 1 \\end{bmatrix}$ in the Meggitt decoder, what does this indicate?",
+      "answers": {
+        "a": "No error in the received vector",
+        "b": "Error in the rightmost bit of the buffer register",
+        "c": "Multiple errors occurred",
+        "d": "The code cannot detect the error pattern"
+      },
+      "explanations": {
+        "a": "Incorrect. A non-zero syndrome indicates the presence of an error.",
+        "b": "Correct! The syndrome $\\begin{bmatrix} 1 & 0 & 1 \\end{bmatrix}$ indicates an error in the rightmost bit.",
+        "c": "Incorrect. This syndrome corresponds to a single error pattern.",
+        "d": "Incorrect. The code can detect this error pattern."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "11. Consider a $(15, 7)$ cyclic code. If the generator polynomial has degree 8, which property must it satisfy?",
+      "answers": {
+        "a": "$g_0 = 0$ and $g_8 = 1$",
+        "b": "$g_0 = 1$ and $g_8 = 1$",
+        "c": "$g_0 = g_8 = 0$",
+        "d": "$g_0 = 1$ and $g_8 = 0$"
+      },
+      "explanations": {
+        "a": "Incorrect. Both $g_0$ and $g_{n-k}$ must equal 1.",
+        "b": "Correct! For a generator polynomial, $g_0 = g_{n-k} = 1$ is always true.",
+        "c": "Incorrect. Both coefficients must be 1, not 0.",
+        "d": "Incorrect. $g_8$ must equal 1."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "12. In a shift register encoder for systematic encoding, what relationship exists between the parity bits and the message polynomial?",
+      "answers": {
+        "a": "Parity bits are the quotient when $X^{n-k}\\mathbf{u}(X)$ is divided by $\\mathbf{g}(X)$",
+        "b": "Parity bits are the remainder when $X^{n-k}\\mathbf{u}(X)$ is divided by $\\mathbf{g}(X)$",
+        "c": "Parity bits equal the message bits",
+        "d": "Parity bits are independent of the message polynomial"
+      },
+      "explanations": {
+        "a": "Incorrect. The parity bits correspond to the remainder, not the quotient.",
+        "b": "Correct! The parity bits form $\\mathbf{b}(X)$, the remainder when $X^{n-k}\\mathbf{u}(X)$ is divided by $\\mathbf{g}(X)$.",
+        "c": "Incorrect. Parity bits are computed from message bits using the generator polynomial.",
+        "d": "Incorrect. Parity bits depend on the message polynomial."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "13. For a Meggitt decoder of a single-error-correcting $(n, k)$ cyclic code, how many distinct error syndromes need to be detected by the error pattern detector?",
+      "answers": {
+        "a": "$n$",
+        "b": "$k$",
+        "c": "$1$",
+        "d": "$n-k$"
+      },
+      "explanations": {
+        "a": "Incorrect. The Meggitt decoder efficiently uses cyclic shifts to reduce the number of required syndromes.",
+        "b": "Incorrect. The number is not related to the dimension.",
+        "c": "Correct! The Meggitt decoder only needs to detect one specific syndrome (e.g., $\\begin{bmatrix} 1 & 0 & 1 \\end{bmatrix}$ for the example), using shifts to handle all error positions.",
+        "d": "Incorrect. Only one syndrome needs explicit detection."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
     }
   ]
 }
